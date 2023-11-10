@@ -4,11 +4,11 @@ body {
     font-family: 'Roboto', sans-serif;
     display: grid;
     grid-template-columns: 17% 1fr;
-    grid-template-rows: 15% 1fr;
+    grid-template-rows: 17% 1fr;
     grid-template-areas: 
-        "sidebar header"
-        "sidebar main";
-  }
+      "sidebar header"
+      "sidebar main";
+}
   
   .sidebar {
     background-color: #0ea5e9;
@@ -84,26 +84,140 @@ body {
     grid-area: header;
     display: grid;
     grid-template-rows: 30% 1fr;
+    grid-gap: 40px;
     grid-template-areas: 
-    "header-top"
-    "header-bottom";
+      "header-top"
+      "header-bottom";
   }
 
   .header-top {
     display: grid; 
     grid-template-columns: 70% 1fr;
+    align-items: center;
     grid-area: header-top;
+    grid-template-areas: 
+      "search-section user-info-top";
+  }
+
+  .search-section {
+    display: grid;
+    grid-area: search-section;
+    grid-template-columns: 20% 1fr;
+    grid-template-areas: "search-button search-input";
+  }
+
+  #search-button {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    overflow: hidden;
+    display: grid;
+    grid-area: search-button;
+  }
+
+  #search-input {
+    border-radius: 15px; 
+    background-color: #e2e8f0; 
+    height: 30px;
+    border: none; 
+    display: grid;
+    grid-area: search-input;
   }
 
   .user-info-top {
     display: grid;
-    grid-template-columns: 30% 30% 30%;
+    grid-area: user-info-top;
+    grid-template-columns: 20% 20% 60%;
+    grid-template-areas: "notification-button avatar-image user-name-top";
+  }
+
+  #notification-button {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    overflow: hidden;
+    display: grid;
+    grid-area: notification-button;
+  }
+
+  .avatar-image {
+    width: 50px; 
+    height: 50px; 
+    border-radius: 50%; 
+    overflow: hidden;
+    display: grid;
+    grid-area: avatar-image;
+  }
+
+  .avatar-image img {
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+  }
+
+  .user-name-top {
+    font-weight: bold;
   }
 
   .header-bottom {
     display: grid;
     grid-template-columns: 50% 50%;
     grid-area: header-bottom;
+    grid-template-areas: "user-info-bottom button-group-bottom";
+  }
+
+  .user-info-bottom {
+    display: grid;
+    grid-area: user-info-bottom;
+    grid-template-columns: 20% 60%;
+    grid-template-rows: 50% 50%;
+    grid-template-areas: 
+      "avatar-image-2 hi-text"
+      "avatar-image-2 user-name-bottom";
+  }
+
+  .button-group-bottom {
+    display: grid;
+    grid-area: button-group-bottom;
+    grid-template-columns: 100px 100px 100px;
+    grid-gap: 20px;
+  }
+
+  .button-group {
+    background-color: #0ea5e9;
+    cursor: pointer;
+    border: none;
+    font-weight: bold;
+    color: white;
+    border-radius: 20px;
+    width: 100px;
+    height: 40px;
+  }
+
+  .avatar-image-2 {
+    width: 70px; 
+    height: 70px; 
+    border-radius: 50%; 
+    overflow: hidden;
+    grid-area: avatar-image-2;
+  }
+
+  .hi-text {
+    display: grid;
+    grid-area: hi-text;
+  }
+
+  .user-name-bottom {
+    display: grid;
+    grid-area: user-name-bottom;
+  }
+
+  .avatar-image-2 img {
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
   }
 
   .main-content {
@@ -115,7 +229,7 @@ body {
       "projects announcements"
       "projects trending";
     grid-gap: 20px;
-    background-color: #f4f4f4;
+    background-color: #e2e8f0;
   }
   
   .projects {
@@ -129,13 +243,11 @@ body {
   
   .announcements {
     grid-area: announcements;
-    background-color: #f4f4f4;
     padding: 20px 30px 10px 10px;
   }
   
   .trending {
     grid-area: trending;
-    background-color: #f4f4f4;
     padding: 20px;
   }
 
