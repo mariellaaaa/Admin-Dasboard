@@ -8,32 +8,60 @@ body {
     grid-template-areas: 
         "sidebar header"
         "sidebar main";
-    height: 100vh;
   }
   
   .sidebar {
-    background-color: #333;
+    background-color: #0ea5e9;
     color: #fff;
-    padding: 20px;
+    padding: 25px;
     display: grid;
     grid-area: sidebar;
   }
 
   .navigation-1 {
     display: grid;
-    grid-template-columns: 20% 1fr;
+    grid-template-columns: 12% 1fr;
+  }
+
+  .link-img-1 {
+    display: grid;
+    grid-template-rows: 20px 20px 20px 20px 20px 20px;
+    grid-gap: 20px;
+  }
+
+  .link-name-1 {
+    display: grid;
+    grid-template-rows: 20px 20px 20px 20px 20px 20px;
+    grid-gap: 20px;
+    font-weight: bold;
   }
 
   .navigation-2 {
     display: grid;
-    grid-template-columns: 20% 1fr;
+    grid-template-columns: 12% 1fr;
+  }
+
+  .link-img-2 {
+    display: grid;
+    grid-template-rows: 20px 20px 20px 20px 20px 20px;
+    grid-gap: 20px;
+  }
+
+  .link-name-2 {
+    display: grid;
+    grid-template-rows: 20px 20px 20px 20px 20px 20px;
+    grid-gap: 20px;
+    font-weight: bold;
   }
   
   .logo {
     color: #fff;
     font-size: 1.5rem;
     font-weight: bold;
-    margin-bottom: 20px;
+    margin-top: -60px;
+    display: grid;
+    grid-template-columns: 12% 1fr;
+    align-items: center;
   }
   
   nav ul {
@@ -78,8 +106,6 @@ body {
     grid-area: header-bottom;
   }
 
-
-  
   .main-content {
     padding: 20px;
     display: grid;
@@ -118,6 +144,8 @@ body {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden; 
+    word-wrap: break-word;
   }
 
   @media only screen and (max-width: 425px) {
@@ -160,18 +188,18 @@ body {
     body {
       display: grid;
       grid-template-columns: 1fr;
-      grid-template-rows: auto auto; /* Adjusted to two auto rows */
+      grid-template-rows: auto auto; 
       grid-template-areas: 
         "header"
         "sidebar"
         "main";
-      height: auto; /* Allow the height to adjust based on content */
+      height: auto; 
     }
   
     .main-content {
       display: grid;
       grid-template-columns: 1fr;
-      grid-template-rows: auto; /* Adjusted to auto */
+      grid-template-rows: auto; 
       grid-template-areas: 
         "projects"
         "announcements"
@@ -187,7 +215,7 @@ body {
   @media only screen and (min-width: 769px) and (max-width: 1024px) {
     body {
       display: grid;
-      grid-template-columns: 1fr 3fr;
+      grid-template-columns: 20% 1fr;
       grid-template-rows: auto;
       grid-template-areas: 
         "sidebar header"
