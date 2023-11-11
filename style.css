@@ -1,6 +1,7 @@
 @import url(reset.css);
 
 body {
+
   margin: 0;
   padding: 0;
   font-family: "Roboto", sans-serif;
@@ -41,12 +42,6 @@ body {
 .navigation-2 {
   display: grid;
   grid-template-columns: 12% 1fr;
-}
-
-.link-img-2 {
-  display: grid;
-  grid-template-rows: 20px 20px 20px 20px 20px 20px;
-  grid-gap: 20px;
 }
 
 .link-name-2 {
@@ -117,6 +112,7 @@ nav a {
   grid-area: search-button;
 }
 
+main-content
 #search-input {
   border-radius: 15px;
   background-color: #e2e8f0;
@@ -126,12 +122,14 @@ nav a {
   grid-area: search-input;
 }
 
+
 .user-info-top {
   display: grid;
   grid-area: user-info-top;
   grid-template-columns: 20% 20% 60%;
   grid-template-areas: "notification-button avatar-image user-name-top";
 }
+
 
 #notification-button {
   background: none;
@@ -151,6 +149,7 @@ nav a {
   display: grid;
   grid-area: avatar-image;
 }
+
 
 .avatar-image img {
   width: 100%;
@@ -277,11 +276,14 @@ nav a {
       "projects"
       "announcements"
       "trending";
+
   }
 
   .trending-container {
     display: grid;
+
     grid-template-columns: 1fr;
+   
   }
 }
 
@@ -325,12 +327,115 @@ nav a {
       "sidebar main";
   }
 
+
   .main-content {
     grid-template-columns: 1fr 1fr;
   }
 
   .projects {
     grid-template-columns: 1fr 2fr;
+
+  @media only screen and (max-width: 425px) {
+    body {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "header" 
+        "sidebar"
+        "main";
+      height: auto;
+    }
+
+    .main-content {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto; 
+        grid-template-areas: 
+        "projects"
+        "announcements"
+        "trending";
+    }
+
+    .sidebar {
+      display: grid;
+      grid-template-columns: 50% 50%;
+      grid-template-rows: 20% 1fr;
+      height: 15rem;
+    }
+
+    .header {
+      display: grid;
+      grid-template-columns: 1fr;
+    }
+
+    .projects {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .announcements {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .trending {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+  }
+
+  @media only screen and (max-width: 768px) {
+    body {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: auto auto; 
+      grid-template-areas: 
+        "header"
+        "sidebar"
+        "main";
+      height: auto; 
+    }
+
+    .sidebar {
+      display: grid;
+      grid-template-columns: 50% 50%;
+      grid-template-rows: 20% 1fr;
+      height: 15rem;
+    }
+  
+    .main-content {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: auto; 
+      grid-template-areas: 
+        "projects"
+        "announcements"
+        "trending";
+    }
+  
+    .projects, .announcements, .trending {
+      display: grid;
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  @media only screen and (min-width: 769px) and (max-width: 1024px) {
+    body {
+      display: grid;
+      grid-template-columns: 20% 1fr;
+      grid-template-rows: auto;
+      grid-template-areas: 
+        "sidebar header"
+        "sidebar main";
+    }
+  
+    .main-content {
+      grid-template-columns: 1fr 1fr;
+    }
+  
+    .projects {
+      grid-template-columns: 1fr 1fr;
+    }
   }
 }
 
