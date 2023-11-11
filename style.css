@@ -243,7 +243,6 @@ nav a {
 
 .announcements {
   grid-area: announcements;
-  padding: 20px 30px 10px 10px;
 }
 
 .trending {
@@ -280,12 +279,7 @@ nav a {
       "trending";
   }
 
-  .announcements {
-    display: grid;
-    grid-template-columns: 1fr;
-  }
-
-  .trending {
+  .trending-container {
     display: grid;
     grid-template-columns: 1fr;
   }
@@ -314,8 +308,8 @@ nav a {
   }
 
   .projects,
-  .announcements,
-  .trending {
+  .announcements-container,
+  .trending-container {
     display: grid;
     grid-template-columns: 1fr;
   }
@@ -368,4 +362,73 @@ nav a {
   width: 35px;
   height: 35px;
   fill: black;
+}
+
+.announcements-container,
+.trending-container {
+  display: grid;
+  grid-template-columns: 3fr;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: white;
+}
+
+.announcements-card p::after {
+  content: "";
+  display: block;
+  height: 1px;
+  background-color: lightgrey;
+  margin-top: 15px;
+  width: 100%;
+}
+.announcements-card:last-of-type p::after {
+  content: none;
+}
+
+.announcements-card,
+.trending-card {
+  padding-bottom: 20px;
+  overflow: hidden;
+  word-wrap: break-word;
+}
+
+.announcements-card:nth-of-type(3) {
+  padding-bottom: 0px;
+}
+
+.trending-card {
+  display: flex;
+  align-items: center;
+}
+
+.trending-card::before {
+  content: "";
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #0ea5e9;
+  background-size: cover;
+  background-position: center;
+  margin-right: 10px;
+}
+
+.trending-card:nth-of-type(1)::before {
+  background-image: url("./images/cat_1998592.png");
+}
+
+.trending-card:nth-of-type(2)::before {
+  background-image: url("./images/dog_1998627.png");
+}
+
+.trending-card:nth-of-type(3)::before {
+  background-image: url("./images/penguin_8851407.png");
+}
+
+.trending-card:nth-of-type(4)::before {
+  background-image: url("./images/alien_2470787.png");
+}
+
+.trending-card:nth-of-type(4) {
+  padding-bottom: 0px;
 }
