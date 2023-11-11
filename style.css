@@ -4,7 +4,7 @@ body {
     font-family: 'Roboto', sans-serif;
     display: grid;
     grid-template-columns: 17% 1fr;
-    grid-template-rows: 17% 1fr;
+    grid-template-rows: 18% 1fr;
     grid-template-areas: 
       "sidebar header"
       "sidebar main";
@@ -13,7 +13,7 @@ body {
   .sidebar {
     background-color: #0ea5e9;
     color: #fff;
-    padding: 25px;
+    padding: 20px;
     display: grid;
     grid-area: sidebar;
   }
@@ -79,12 +79,11 @@ body {
   
   .header {
     background-color: white;
-    padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     grid-area: header;
     display: grid;
     grid-template-rows: 30% 1fr;
-    grid-gap: 40px;
+    grid-gap: 30px;
     grid-template-areas: 
       "header-top"
       "header-bottom";
@@ -92,9 +91,11 @@ body {
 
   .header-top {
     display: grid; 
-    grid-template-columns: 70% 1fr;
+    grid-template-columns: 1fr auto;
     align-items: center;
+    grid-gap: 10%;
     grid-area: header-top;
+    margin-top: 10px;
     grid-template-areas: 
       "search-section user-info-top";
   }
@@ -102,7 +103,7 @@ body {
   .search-section {
     display: grid;
     grid-area: search-section;
-    grid-template-columns: 20% 1fr;
+    grid-template-columns: 50px 90%;
     grid-template-areas: "search-button search-input";
   }
 
@@ -114,6 +115,7 @@ body {
     overflow: hidden;
     display: grid;
     grid-area: search-button;
+    margin-left: 30%;
   }
 
   #search-input {
@@ -128,8 +130,11 @@ body {
   .user-info-top {
     display: grid;
     grid-area: user-info-top;
-    grid-template-columns: 20% 20% 60%;
+    align-self: end;
+    grid-gap: 20px;
+    grid-template-columns: 100px auto 1fr;
     grid-template-areas: "notification-button avatar-image user-name-top";
+    margin-right: 30px;
   }
 
   #notification-button {
@@ -140,6 +145,8 @@ body {
     overflow: hidden;
     display: grid;
     grid-area: notification-button;
+    margin-left: 70px;
+    margin-top: 10px;
   }
 
   .avatar-image {
@@ -159,6 +166,8 @@ body {
 
   .user-name-top {
     font-weight: bold;
+    display: grid;
+    grid-area: user-name-top;
   }
 
   .header-bottom {
@@ -171,8 +180,9 @@ body {
   .user-info-bottom {
     display: grid;
     grid-area: user-info-bottom;
-    grid-template-columns: 20% 60%;
-    grid-template-rows: 50% 50%;
+    margin-left: 30px;
+    grid-template-columns: 100px 1fr;
+    grid-template-rows: auto auto;
     grid-template-areas: 
       "avatar-image-2 hi-text"
       "avatar-image-2 user-name-bottom";
@@ -183,6 +193,8 @@ body {
     grid-area: button-group-bottom;
     grid-template-columns: 100px 100px 100px;
     grid-gap: 20px;
+    justify-self: end;
+    margin-right: 30px;
   }
 
   .button-group {
@@ -206,12 +218,16 @@ body {
 
   .hi-text {
     display: grid;
+    font-size: 12px;
     grid-area: hi-text;
   }
 
   .user-name-bottom {
     display: grid;
+    font-weight: bold;
+    font-size: 20px;
     grid-area: user-name-bottom;
+    margin-top: -10px;
   }
 
   .avatar-image-2 img {
@@ -268,6 +284,7 @@ body {
         "header" 
         "sidebar"
         "main";
+      height: auto;
     }
 
     .main-content {
@@ -278,6 +295,18 @@ body {
         "projects"
         "announcements"
         "trending";
+    }
+
+    .sidebar {
+      display: grid;
+      grid-template-columns: 50% 50%;
+      grid-template-rows: 20% 1fr;
+      height: 15rem;
+    }
+
+    .header {
+      display: grid;
+      grid-template-columns: 1fr;
     }
 
     .projects {
@@ -306,6 +335,13 @@ body {
         "sidebar"
         "main";
       height: auto; 
+    }
+
+    .sidebar {
+      display: grid;
+      grid-template-columns: 50% 50%;
+      grid-template-rows: 20% 1fr;
+      height: 15rem;
     }
   
     .main-content {
